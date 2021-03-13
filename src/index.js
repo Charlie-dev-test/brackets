@@ -1,7 +1,7 @@
 module.exports = function check(str, bracketsConfig) {
     const config = bracketsConfig.map(br => br.join(''));
     let count = 0;
-    while (count != bracketsConfig.length){
+    while (count !== bracketsConfig.length){
         count = 0;
         config.forEach(function(conf){
             if(str.includes(conf)){
@@ -11,9 +11,5 @@ module.exports = function check(str, bracketsConfig) {
             }
         });
     }
-    if(str.length == 0){
-        return true;
-    }else {
-        return false;
-    }
+    return str.length === 0;
 }
